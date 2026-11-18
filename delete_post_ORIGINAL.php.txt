@@ -1,0 +1,21 @@
+<?php // delete_post.php
+// =====================================================================
+// ACTIVITY 3 – ACCESS CONTROL BUG HUNT
+// This is the VULNERABLE page from Slide 28. Only ONE line was added
+// (marked below) so it can run inside your project.
+//
+// YOUR TASKS
+//   1. Find at least 4 security problems.
+//   2. For each: name it, explain the risk, and give the fix.
+//   3. Rewrite this file securely (keep a copy of the original for your write-up).
+//   Hint: think about login, ownership, injection, the HTTP method, and accounting.
+//
+// Test ONLY on your own local XAMPP/Laragon copy. Re-import 03_posts_table.sql to reset.
+// =====================================================================
+require_once __DIR__ . '/config/db.php';   // <-- added so $conn exists (not part of the bug hunt)
+
+session_start();
+$post_id = $_GET['id'];
+$conn->query("DELETE FROM posts
+              WHERE id = $post_id");
+header('Location: posts.php');

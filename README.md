@@ -1,6 +1,6 @@
 # WST2 · Activity 3 – Access Control Bug Hunt
 
-**Name:** Rey Anthony Dahunog · **Section:** 4C
+**Name:** Rey Anthony E. Dahunog · **Section:** BS Info Tech 4C
 
 This builds on Activity 2 (role-based dashboard). A forum page, `posts.php`, lets users delete posts through `delete_post.php`. The original `delete_post.php` was vulnerable. I found the security problems in it and rewrote the file securely.
 
